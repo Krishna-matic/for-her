@@ -5,34 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For You 🌸</title>
     <style>
+        /* 💖 Aesthetic Background */
         body {
             background: linear-gradient(to bottom right, #ffe4ec, #d2f1ff);
             font-family: 'Comic Sans MS', cursive, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            padding: 50px 20px;
+            min-height: 100vh;
             margin: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
         }
+
+        /* 💌 Message Box */
         .message-box {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 30px;
             border-radius: 20px;
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             text-align: center;
             position: relative;
+            z-index: 2;
+            backdrop-filter: blur(10px);
         }
+
+        /* ✨ Aesthetic Text */
         h1 {
             color: #ff69b4;
-            font-size: 30px;
+            font-size: 32px;
             margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
         }
+
         p, li {
             color: #444;
             font-size: 18px;
             margin: 10px 0;
         }
+
+        /* 🌸 Cute Stickers */
         .stickers {
             position: absolute;
             top: -40px;
@@ -45,14 +60,31 @@
             left: -30px;
             width: 80px;
         }
+
         ul {
             text-align: left;
             padding-left: 20px;
-            margin-top: 20px;
         }
+
+        /* 💖 Floating Hearts Animation */
+        .heart {
+            position: fixed;
+            bottom: -10px;
+            font-size: 20px;
+            color: rgba(255, 105, 180, 0.8);
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+            animation: floatUp 4s ease-in-out infinite, fadeOut 4s ease-in-out infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+        }
+
     </style>
 </head>
 <body>
+
     <div class="message-box">
         <img src="https://em-content.zobj.net/source/microsoft-teams/337/sparkling-heart_1f496.png" class="stickers" alt="heart sticker">
         <h1>Hey You! 💫</h1>
@@ -62,7 +94,7 @@
 
         <ul>
             <li>
-                You shames the sun with just your smile ☀️:
+                You shame the sun with just your smile ☀️:
                 <div style="font-size: 16px; margin-top: 5px; color: #777;">
                     The sun – yeah, the one above us – gets jealous when you open your brown golden eyes ✨
                 </div>
@@ -71,17 +103,66 @@
                 The moon? Doesn’t even stand a chance 🌙:
                 <div style="font-size: 16px; margin-top: 5px; color: #777;">
                     The moon himself said to me one day: <br>
-                    <em>"Bro, you got it good – you see me at night, and you get to see her in the morning… and that's equivalent."</em>
+                    <em>"Bro, you got it good – you see me at night, but you get to see her in the morning… and that's equivalent."</em>
                 </div>
             </li>
-            <li>She’s got a heart softer than clouds and stronger than storms ☁️🌪️</li>
-            <li>She's the kind of genius that makes smart look cooler 🧠💡</li>
-            <li>Every step she takes makes the world look a bit more magical 🩰</li>
-            <li>Confidence? She wears it better than any crown 👑</li>
-            <li>And if beauty had a voice, it’d sound like her laugh 🎶</li>
+            <li>
+                When you laugh, even the sadness forgets what it was doing 😊:
+                <div style="font-size: 16px; margin-top: 5px; color: #777;">
+                    Your smile is like a precious gem, not everyone deserves to see that smile of yours. 💎
+                </div>
+            </li>
+            <li>
+                Your eyes aren’t just eyes – they are galaxies, and I have been orbiting ever since ✨🌌:
+                <div style="font-size: 16px; margin-top: 5px; color: #777;">
+                    Oh, to say anything about your eyes from my words would not be enough. I think I don’t have words to explain that extraordinary beauty. 💖
+                </div>
+            </li>
+            <li>
+                Even the stars need darkness to shine – and girl, you were made to shine 🌟:
+                <div style="font-size: 16px; margin-top: 5px; color: #777;">
+                    Don't you ever think of giving up — you got dreams, and it is the most beautiful thing that I love about you. 💖
+                </div>    
+            </li>
+            <li>
+                Every storm you’ve faced only made you more magical. You’re tougher than you think 💪:
+                <div style="font-size: 16px; margin-top: 5px; color: #777;">
+                    So whenever you feel like you’re not enough, remember this — the world lights up just because *you* woke up ☀️✨<br>
+                    Your strength isn't in never falling, it's in how beautifully you rise every single time 💫🌱
+                </div>    
+            </li>
+            <li>
+                You’ve got this. And I’ll always believe in you, even on the days you don’t 🌈:
+                <div style="font-size: 16px; margin-top: 5px; color: #777;">
+                    You’re the one I said I could write books about 📖💗. That’s not just a compliment — it means you’re truly extraordinary ✨<br>
+                    So promise me you’ll work hard every day for your dreams 🌸 and never let anyone hurt you — not emotionally, not physically. You deserve peace, love, and everything pure 🌈🛡️
+                </div>           
+            </li>
         </ul>
 
         <img src="https://em-content.zobj.net/source/microsoft-teams/337/star_2b50.png" class="bottom-sticker" alt="star sticker">
     </div>
+
+    <!-- 💖 Floating Hearts Animation -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '💖';
+            document.body.appendChild(heart);
+
+            // Random position and size
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = Math.random() * 20 + 15 + "px";
+
+            // Remove heart after animation
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+
+        setInterval(createHeart, 600);
+    </script>
+
 </body>
 </html>
